@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e5f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+}
+.header {
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.header a {
+  background-color: #47d681;
+  padding: 0.1rem 0.6rem;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: transform 0.3s;
+  text-decoration: none;
+}
+.header a:hover {
+  transform: translate(-5px, 0);
+  color: inherit;
+}
+
+.app {
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #47d681;
+  color: white;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: #6c757d;
+}
+
+.metrics-card {
+  background-color: white;
+  color: black;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.metrics-card h2 {
+  margin-top: 0;
+}
+
+.metrics-card p {
+  margin: 0.5rem 0;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+
+/* media screen */
+
+
+@media (max-width: 500px) {
+  body {
+    font-size: .8rem;
+  }
+  .form {
+    flex-direction: column;
+    padding-inline: 20px;
+  }
+
+  .input {
+    margin: auto;
+    margin-bottom: 0.5rem;
+  }
+  .button{
+    width: 50%;
+    margin: auto;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .metrics-card{
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 1.3rem;
+  }
+  .metrics-card{
+    max-width: 70%;
+  }
+}
