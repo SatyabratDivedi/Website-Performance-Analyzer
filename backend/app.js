@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://speedx1.vercel.app",
     credentials: true,
   })
 );
