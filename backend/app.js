@@ -1,7 +1,7 @@
 const express = require("express");
-const puppeteer = require("puppeteer-core");
-const chromium = require("chrome-aws-lambda");
+const puppeteer = require("puppeteer");
 var cors = require("cors");
+
 const app = express();
 app.use(express.json());
 
@@ -11,9 +11,9 @@ app.use(
     credentials: true,
   })
 );
- 
+
 app.post("/analyze", async (req, res) => {
-  const { url } = req.body;
+  const { url, browserType } = req.body;
   console.log(url);
   if (!url) {
     return res.status(400).json({ error: "URL is required" });
@@ -21,11 +21,18 @@ app.post("/analyze", async (req, res) => {
 
   let browser = null;
   try {
+    let executablePath;
+    if (browserType === "firefox") {
+      executablePath = "path/to/firefox";
+    } else if (browserType === "edge") {
+      executablePath = "path/to/edge";
+    } else {
+      executablePath = puppeteer.executablePath();
+    }
+
     browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
+      executablePath,
+      headless: true,
     });
 
     const page = await browser.newPage();

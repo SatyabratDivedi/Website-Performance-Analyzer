@@ -33,13 +33,13 @@ const App = () => {
   return (
     <div className='app'>
       <div className='header'>
-        <a href=''>
+        <a href='https://github.com/SatyabratDivedi' target="_blank">
           <FaSquareGithub style={{ transform: "translateY(5px)" }} />
         </a>
-        <a href=''>
+        <a href='https://linkedin.com/in/satyabrat-divedi-a3555a183' target="_blank">
           <FaLinkedin style={{ transform: "translateY(5px)" }} />
         </a>
-        <a href=''>
+        <a href='https://twitter.com/satyabratd5605' target="_blank">
           <FaSquareXTwitter style={{ transform: "translateY(5px)" }} />
         </a>
       </div>
