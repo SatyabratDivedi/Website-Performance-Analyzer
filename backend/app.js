@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://speedx1.vercel.app",
+    origin: "*",
     credentials: true,
   })
 );
@@ -14,7 +14,6 @@ app.use(
 app.post("/analyze", async (req, res) => {
   const { url } = req.body;
   console.log(url);
-
   if (!url) {
     return res.status(400).json({ error: " URL is required" });
   }
@@ -43,5 +42,4 @@ app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(3000, () => console.log(`Server running on port 3000`));

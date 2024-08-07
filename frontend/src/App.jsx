@@ -19,6 +19,7 @@ const App = () => {
     const toastId = toast.loading("Please Wait...");
     try {
       const res = await axios.post("https://website-performance-analyzer-backend.vercel.app/analyze", { url });
+      console.log(res.data)
       setMetrics(res.data.data);
       toast.success(res.data.msg, { id: toastId });
     } catch (error) {
