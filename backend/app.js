@@ -11,7 +11,7 @@ app.use(
     credentials: true,
   })
 );
-
+ 
 app.post("/analyze", async (req, res) => {
   const { url } = req.body;
   console.log(url);
